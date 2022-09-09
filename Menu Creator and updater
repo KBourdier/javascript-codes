@@ -1,0 +1,30 @@
+const menu = {
+  _dish: (' '),
+  _price: 0,
+
+  set dish(dishToCheck) {
+    if(typeof dishToCheck === 'string'){
+      return this._dish = dishToCheck;
+    }
+  },
+
+    set price(priceToCheck){
+      if (typeof priceToCheck === 'number'){
+        return this._price = priceToCheck;
+      }
+    },
+
+    get todaysSpecial() {
+      if(this._dish && this._price){
+        return `Today's dish is ${this._dish} for $${this._price}!`
+      } else {
+        return `Dish or price not set correctly!`
+      }
+    }
+  
+};
+
+menu.dish = 'Escargot';
+menu.price = 4.20;
+
+console.log(menu.todaysSpecial);
