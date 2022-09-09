@@ -47,6 +47,18 @@ class PrimarySchool extends School {
   }
 }
 
+class MiddleSchool extends School {
+
+  constructor(name, numberOfStudents, annoyingScale){
+    super(name, 'middle', numberOfStudents, annoyingScale);
+    this._annoyingScale = annoyingScale;
+  }
+
+  get annoyingScale(){
+    return this._annoyingScale;
+  }
+}
+
 class HighSchool extends School {
 
   constructor(name, numberOfStudents, sportsTeams){
@@ -64,6 +76,11 @@ const saintStephens = new PrimarySchool('Saint Stephens', 514, 'Students must be
 saintStephens.quickFacts();
 
 const sub = School.pickSubstituteTeacher(['Mike Oxlong', 'Hugh Richard', 'J. P. Morgan', 'James Harden', 'Big Shaq', 'Al Sizzler']);
+
+const Nantawan = new MiddleSchool('Nantawan', 69420, 'Students are obligated to have an annoying scale of 6 or under to be permitted.');
+
+Nantawan.quickFacts();
+console.log(Nantawan.annoyingScale);
 
 const PanAsiaInternationalSchool = new HighSchool('Pan Asia International School', 415, ['Swimming', 'Muay Thai', 'Beach Volleyball', 'Golf']);
 
